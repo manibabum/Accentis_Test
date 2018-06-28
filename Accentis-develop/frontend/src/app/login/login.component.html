@@ -1,0 +1,68 @@
+<!--Login Page Starts-->
+<section id="login">
+    <div class="container-fluid">
+        <div class="row full-height-vh">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <div class="card gradient-indigo-purple text-center width-400">
+                    <div class="card-img">
+                        <img alt="element 06" class="mb-1" src="assets/img/logos/logo-big-white.png">
+                        <!-- <h2>Accentis</h2> -->
+                    </div>
+                    <div class="card-body">
+                        <div class="card-block">
+                            <h2 class="white">Inloggen</h2>
+                            <br>
+
+                            <!-- //======For validation message start====== -->
+                            <div *ngIf="isLoginError" class="error-message">
+                                <ngb-alert type="danger" [dismissible]="false">
+                                    <strong>sorry!</strong> you have entered wrong username or password.
+                                </ngb-alert>
+                            </div>
+                            <!-- //======For validation message end====== -->
+
+                            <!-- //======Login form start====== -->
+                            <form [formGroup]="loginFormAdd" (ngSubmit)="onSubmit(loginFormAdd)" novalidate>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control" id="UserName" formControlName="UserName" placeholder="Emailadres" required>
+                                        <small class="form-text text-muted danger" *ngIf="!loginFormAdd.get('UserName').valid && (loginFormAdd.get('UserName').dirty || loginFormAdd.get('UserName').touched)">Please enter a valid email!</small>
+                                        <!-- //small class apply for validation to form control -->
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="password" class="form-control" id="Password" formControlName="Password" placeholder="Wachtwoord" required>
+                                        <small class="form-text text-muted danger" *ngIf="!loginFormAdd.get('Password').valid && (loginFormAdd.get('Password').dirty || loginFormAdd.get('Password').touched)">Please enter a  valid Password !</small>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0 ml-3">
+                                                <input type="checkbox" class="custom-control-input" checked id="rememberme">
+                                                <label class="custom-control-label float-left white" for="rememberme">Onthoud mij</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-pink btn-block btn-raised" [disabled]="!loginFormAdd.valid">Inloggen</button>
+                                    </div>
+                                </div>
+                            </form>
+                             <!-- //======Login form end====== -->
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="float-left">
+                            <a (click)="onForgotPassword()" class="white">Wachtwood vergeten?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Login Page Ends-->

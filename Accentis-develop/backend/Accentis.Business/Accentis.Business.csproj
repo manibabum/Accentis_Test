@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="JWT\CustomJwtDataFormat.cs" />
+    <Compile Remove="JWT\ITokenProviderMiddleware.cs" />
+    <Compile Remove="JWT\MiddlewareExtensions.cs" />
+    <Compile Remove="JWT\TokenProviderMiddleware.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Accentis.Database.Domain\Accentis.Database.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>..\Dependency\Kendo.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

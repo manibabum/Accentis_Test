@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="toolbar-background text-alignment">
+      Accentis
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="login-content">
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <!-- <div class="logo"></div> -->
+      <h2 ion-text class="text-dark">
+        <strong>ONLINE BEHEER VAN DAKEN</strong>
+      </h2>
+    </div>
+
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating class="theme-text-color">
+          <ion-icon name="mail" item-start class="theme-text-color"></ion-icon>
+          E-mailadres
+        </ion-label>
+        <ion-input type="email" class="theme-text-color"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating class="theme-text-color">
+          <ion-icon name="lock" item-start class="theme-text-color"></ion-icon>
+          Wachtwoord
+        </ion-label>
+        <ion-input type="password" class="theme-text-color"></ion-input>
+      </ion-item>
+    </form>
+
+
+    <p text-left ion-text tappable (click)="forgotPass()">Wachtwoord vergeten?</p>
+
+    <button ion-button icon-start block tappable (click)="login()" class="theme-BG-color">
+      <ion-icon name="log-in"></ion-icon>
+      <strong>Inloggen</strong>
+    </button>
+  </div>
+
+  <!-- <ion-card>
+          <ion-list>
+            <h1 *ngFor="let item of stringAry"> {{item}} </h1>
+          </ion-list>
+        </ion-card>
+
+        <ion-card>
+          <ion-list *ngFor="let name of ary">
+            <h1> {{name.Member + name.ItemCount}} </h1>
+            <h2> {{name.Caption}} </h2>
+          </ion-list>
+        </ion-card> -->
+</ion-content>
+
+<!-- <kendo-grid [data]="gridData" [pageSize]="state.take" [skip]="state.skip" [sort]="state.sort" [filter]="state.filter" [sortable]="true"
+  [pageable]="true" [filterable]="true" (dataStateChange)="dataStateChange($event)">
+  <kendo-grid-column field="ProductID" title="ID" width="40" [filterable]="false">
+  </kendo-grid-column>
+  <kendo-grid-column field="ProductName" title="Product Name">
+  </kendo-grid-column>
+  <kendo-grid-column field="FirstOrderedOn" title="First Ordered On" width="240" filter="date" format="{0:d}">
+  </kendo-grid-column>
+  <kendo-grid-column field="UnitPrice" title="Unit Price" width="180" filter="numeric" format="{0:c}">
+  </kendo-grid-column>
+  <kendo-grid-column field="Discontinued" width="120" filter="boolean">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <input type="checkbox" [checked]="dataItem.Discontinued" disabled/>
+    </ng-template>
+  </kendo-grid-column>
+</kendo-grid> -->

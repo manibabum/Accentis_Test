@@ -1,0 +1,121 @@
+<ion-header>
+    <ion-navbar class="left-padding-10">
+        <ion-title class="toolbar-background text-alignment">
+            File Recording
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-label class="lbl-background">Address</ion-label>
+    <ion-row>
+        <ion-col width-50>
+            <ion-label class="left-padding-5">
+                <strong>Daknummer</strong>
+            </ion-label>
+        </ion-col>
+        <ion-col width-50>
+            <ion-label class="left-padding-5">
+                {{documentNumber}}
+            </ion-label>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col width-50>
+            <ion-label class="left-padding-5">
+                <strong>Omschrijving</strong>
+            </ion-label>
+        </ion-col>
+        <ion-col width-50>
+            <ion-label class="left-padding-5">
+                Dak boven woningen
+            </ion-label>
+        </ion-col>
+    </ion-row>
+
+    <ion-label class="single-line"></ion-label>
+
+    <ion-item text-wrap>
+        <ion-label class="font-30 text-alignment">File recording</ion-label>
+    </ion-item>
+
+    <ion-card (click)="roofDrawing()" text-wrap>
+        <ion-list>
+            <ion-row>
+                <ion-col width-50>
+                    <img style="width: 100px; height: 100px;" src="assets/imgs/logo.png">
+                </ion-col>
+                <ion-col width-50>
+                    <ion-label>
+                        <strong>Making Daktekening</strong>
+                    </ion-label>
+                    <button ion-button style="background-color: rgb(255, 159, 0);">Nie t gestart</button>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+    </ion-card>
+
+    <ion-card (click)="inventoryTimbers()" text-wrap>
+        <ion-list>
+            <ion-row>
+                <ion-col width-50>
+                    <img style="width: 100px; height: 100px;" src="assets/imgs/logo.png">
+                </ion-col>
+                <ion-col width-50>
+                    <ion-label>
+                        <strong>Inventory timbers</strong>
+                    </ion-label>
+                    <button ion-button style="background-color: rgb(255, 159, 0);">Nie t gestart</button>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+    </ion-card>
+
+    <ion-card (click)="inventoryRoofComponents()" text-wrap>
+        <ion-list>
+            <ion-row>
+                <ion-col width-50>
+                    <img style="width: 100px; height: 100px;" src="assets/imgs/logo.png">
+                </ion-col>
+                <ion-col width-50>
+                    <ion-label>
+                        <strong>Inventory dakbouwdelen</strong>
+                    </ion-label>
+                    <button ion-button style="background-color: rgb(255, 159, 0);">Nie t gestart</button>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+    </ion-card>
+
+    <ion-card text-wrap>
+        <ion-list>
+            <ion-row>
+                <ion-col width-50>
+                    <img style="width: 100px; height: 100px;" src="assets/imgs/logo.png">
+                </ion-col>
+                <ion-col width-50>
+                    <ion-label>
+                        <strong>Inspecting general</strong>
+                    </ion-label>
+                    <button ion-button style="background-color: rgb(255, 159, 0);">Nie t gestart</button>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+    </ion-card>
+
+    <ion-card (click)="inspectionRoofComponents()" text-wrap>
+        <ion-list>
+            <ion-row>
+                <ion-col width-50>
+                    <img style="width: 100px; height: 100px;" src="assets/imgs/logo.png">
+                </ion-col>
+                <ion-col width-50>
+                    <ion-label>
+                        <strong>Inspecting dakbouwdelen</strong>
+                    </ion-label>
+                    <button ion-button style="background-color: rgb(255, 159, 0);">Nie t gestart</button>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+    </ion-card>
+</ion-content>

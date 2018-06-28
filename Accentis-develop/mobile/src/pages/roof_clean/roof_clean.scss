@@ -1,0 +1,25 @@
+page-roof_clean {
+    .input-wrapper{
+        flex: initial;
+    }
+   
+    .card-md .item-md.item-block .item-inner {
+        border: 0;
+        justify-content: center;
+    }
+
+    .card-ios .item-ios.item-block .item-inner {
+        border: 0;
+        justify-content: center;
+    }
+
+    .card-md .item-md.item-checkbox .item-inner{
+        border: 0;
+        justify-content: left;
+    }
+
+    .card-ios .item-ios.item-checkbox .item-inner{
+        border: 0;
+        justify-content: left;
+    }
+}

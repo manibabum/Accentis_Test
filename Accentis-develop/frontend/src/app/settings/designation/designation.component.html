@@ -1,0 +1,100 @@
+<!-- Filter Datatable Options Starts -->
+<section id="filter" class="mb-3">
+    <div class="row">
+        <div class="col-6">
+            <p class="font-medium-3 text-muted text-bold-400">Aanwijzing</p>
+        </div>
+        <div class="col-6">
+            <a href="javascript:void(0)" style='float:right;' (click)="open(content,$event)" class="btn btn-raised gradient-mint white"
+                false>Toevoegen</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <!-- start kendo grid -->
+            <kendo-grid [data]="gridData" [pageSize]="state.take" [skip]="state.skip" [sort]="state.sort" [filter]="state.filter" [sortable]="true"
+                [pageable]="true" filterable="menu" (dataStateChange)="dataStateChange($event)">
+                <ng-template kendoGridToolbarTemplate>
+                    <button type="button" kendoGridExcelCommand>
+                        <span class="k-icon k-i-file-excel"></span>Export to Excel</button>
+                </ng-template>
+                <kendo-grid-column field="designationID" title="DesignationID" hidden="hidden" width="200"></kendo-grid-column>
+                <kendo-grid-column field="designationName" title="Designation Name" filter="text" width="200"></kendo-grid-column>
+                <kendo-grid-column width="200" title="Action">
+                    <ng-template kendoGridCellTemplate let-dataItem>
+                        <a href='javascript:void(0)' (click)="openEdit(content,$event,this.dataItem)">
+                            <i class='icon-note primary font-medium-1 mr-2'></i>
+                        </a>
+                        <a href='javascript:void(0)' (click)="confirmCancelButton(AcceptConsent,$event,this.dataItem.designationId)" false>
+                            <i class='icon-trash primary font-medium-1 mr-2'></i>
+                        </a>
+                    </ng-template>
+                </kendo-grid-column>
+                <kendo-grid-excel fileName="Designation.xlsx"></kendo-grid-excel>
+            </kendo-grid>
+            <!-- end kendo grid -->
+        </div>
+    </div>
+    <!-- Pop up code start -->
+    <div class="card-body">
+        <div class="card-block">
+            <form [formGroup]="regularForm" novalidate>
+                <ng-template #content let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <p class="modal-title font-medium-3 text-muted">{{Pagetitle}}</p>
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="DesignationID" name="DesignationID" formControlName="DesignationID">
+                        <input type="hidden" id="CreatedDate" name="CreatedDate" formControlName="CreatedDate">
+                        <div class="form-group row">
+                            <label class="col-md-3 label-control" for="DesignationName">Aanwijzing: </label>
+                            <div class="col-md-9">
+                                <input type="text" id="DesignationName" class="form-control" name="DesignationName" formControlName="DesignationName" required>
+                                <small class="form-text text-muted danger" *ngIf="!regularForm.get('DesignationName').valid && (regularForm.get('DesignationName').dirty || regularForm.get('DesignationName').touched)">Please enter a Aanwijzing!</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div *ngIf="show==true">
+                            <img class="divLoader" src="./assets/img/photos/tenor.gif">
+                        </div>
+                        <button type="button" class="btn btn-success btn-raised" (click)="onReactiveFormSubmit(regularForm)" [disabled]="!regularForm.valid || buttonDisabled==true">Opslaan</button>
+                        <button type="button" id="btnClose" class="btn btn-secondary btn-raised" (click)="c('Close click')">Close</button>
+                    </div>
+                </ng-template>
+            </form>
+        </div>
+    </div>
+    <!-- Pop up code end -->
+
+    <div class="card-body">
+        <div class="card-block">
+            <ng-template #AcceptConsent let-c="close" let-d="dismiss">
+                <div class="modal-header orange">
+                    <p class="modal-title font-medium-3 text-muted white">Delete Designation</p>
+                    <button type="button" id="btncloseac" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <p>
+                            Are you sure want to delete?
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div *ngIf="show==true">
+                        <img class="divLoader" src="./assets/img/photos/tenor.gif">
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-raised" [disabled]="buttonDisabled==true" (click)="delete(designationId)">Yes</button>
+                    <button type="button" class="btn btn-secondary btn-raised" (click)="c('Close click')">No</button>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</section>
+<!-- Filter Datatable Options Ends -->

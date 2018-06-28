@@ -1,0 +1,74 @@
+<ion-header>
+    <!-- <ion-navbar>
+      <ion-title class="toolbar-background text-alignment">
+        OVERZICHT CONTRACTEN
+      </ion-title>
+      <p text-right class="text-white"><strong>Inspecteur : </strong>Ja ap de Groot</p>
+    </ion-navbar> -->
+
+    <ion-toolbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu" class="custom-icon"></ion-icon>
+        </button>
+        <ion-title class="toolbar-background text-alignment">
+            OVERZICHT CONTRACTEN
+        </ion-title>
+        <p text-right class="text-white">
+            <strong>Inspecteur : </strong>Ja ap de Groot</p>
+    </ion-toolbar>
+
+</ion-header>
+<ion-content>
+    <ion-label class="lbl-background">zoek op contract nr,adres, plaats</ion-label>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list>
+        <ion-item *ngFor="let item of items">
+            {{ item }}
+        </ion-item>
+    </ion-list>
+
+    <ion-card (click)="inspectionDetail()">
+        <ion-list>
+            <ion-item-sliding #item>
+                <ion-item>
+                    <ion-label>
+                        <strong>ordernummer : </strong> AD02 - 348
+                        <br/>
+                        <br/>AD02 - 348</ion-label>
+                    <!-- <ion-icon name="arrow-dropright" item-right></ion-icon> -->
+                </ion-item>
+                <ion-item-options side="left">
+                        <button ion-button (click)="favorite(item)">Favorite</button>
+                        <button ion-button color="danger" (click)="share(item)">Share</button>
+                </ion-item-options>
+                <!-- <ion-item-options side="right">
+                        <button ion-button (click)="unread(item)">Unread</button>
+                </ion-item-options> -->
+            </ion-item-sliding>
+        </ion-list>
+    </ion-card>
+
+    <ion-card (click)="inspectionDetail()">
+        <ion-list>
+            <ion-item>
+                <ion-label>
+                    <strong>ordernummer : </strong> AD02 - 349
+                    <br/>
+                    <br/>AD02 - 348</ion-label>
+                <!-- <ion-icon name="arrow-dropright" item-right></ion-icon> -->
+            </ion-item>
+        </ion-list>
+    </ion-card>
+    <ion-card (click)="inspectionDetail()">
+        <ion-list>
+            <ion-item>
+                <ion-label>
+                    <strong>ordernummer : </strong> AD02 - 350
+                    <br/>
+                    <br/>AD02 - 348</ion-label>
+                <!-- <ion-icon name="arrow-dropright" item-right></ion-icon> -->
+            </ion-item>
+        </ion-list>
+    </ion-card>
+
+</ion-content>

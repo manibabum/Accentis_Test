@@ -1,0 +1,168 @@
+<ion-header>
+    <ion-navbar class="left-padding-10">
+        <ion-title class="toolbar-background text-alignment">
+            Add structural part
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-label class="lbl-background">Address</ion-label>
+
+    <ion-row>
+        <ion-col width-50>
+            <ion-label class=".left-padding-5">
+                <strong>Daknummer</strong>
+            </ion-label>
+        </ion-col>
+        <ion-col width-50>
+            <ion-label class=".left-padding-5">
+                {{documentNumber}}
+            </ion-label>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col width-50>
+            <ion-label class=".left-padding-5">
+                <strong>Omschrijving</strong>
+            </ion-label>
+        </ion-col>
+        <ion-col width-50>
+            <ion-label class=".left-padding-5">
+                Dak boven woningen
+            </ion-label>
+        </ion-col>
+    </ion-row>
+
+    <ion-label class="single-line"></ion-label>
+
+    <ion-row>
+        <ion-label class="font-30 text-alignment">Toevoegen constructiedeel</ion-label>
+    </ion-row>
+
+    <ion-searchbar (ionInput)="getItems($event)">zoeken</ion-searchbar>
+
+    <ion-card text-wrap>
+        <ion-list>
+
+            <ion-row>
+                <ion-col width-20>
+                    <ion-label>
+                        <strong>Nr.</strong>
+                    </ion-label>
+                </ion-col>
+                <ion-col width-20>
+                    <ion-label>
+                        01
+                    </ion-label>
+                </ion-col>
+
+                <ion-col width-20>
+                    <ion-label>
+                        <strong>Type laag</strong>
+                    </ion-label>
+                </ion-col>
+                <ion-col width-20>
+                    <ion-label>
+                        Onderconstructie
+                    </ion-label>
+                </ion-col>
+
+                <ion-col width-20>
+                    <button ion-button style="float: right; margin-right: 20px;" (click)="addStructuralData()">
+                        <ion-icon name="add"></ion-icon>
+                    </button>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col width-20>
+                    <ion-label>
+                        <strong>Lamda</strong>
+                    </ion-label>
+                </ion-col>
+                <ion-col width-20>
+                    <ion-label>
+                        1.500
+                    </ion-label>
+                </ion-col>
+
+                <ion-col width-20>
+                    <ion-label>
+                        <strong>Omschrijving</strong>
+                    </ion-label>
+                </ion-col>
+                <ion-col width-20>
+                    <ion-label>
+                        Beton
+                    </ion-label>
+                </ion-col>
+
+                <ion-col width-20></ion-col>
+            </ion-row>
+
+        </ion-list>
+    </ion-card>
+
+    <ion-card text-wrap>
+        <ion-list>
+
+            <ion-row>
+                <ion-col width-20>
+                    <ion-label>
+                        <strong>Nr.</strong>
+                    </ion-label>
+                </ion-col>
+                <ion-col width-20>
+                    <ion-label>
+                        02
+                    </ion-label>
+                </ion-col>
+
+                <ion-col width-20>
+                    <ion-label>
+                        <strong>Type laag</strong>
+                    </ion-label>
+                </ion-col>
+                <ion-col width-20>
+                    <ion-label>
+                        Onderconstructie
+                    </ion-label>
+                </ion-col>
+
+                <ion-col width-20>
+                    <button ion-button style="float: right; margin-right: 20px;" (click)="addStructuralData()">
+                        <ion-icon name="add"></ion-icon>
+                    </button>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col width-20>
+                    <ion-label>
+                        <strong>Lamda</strong>
+                    </ion-label>
+                </ion-col>
+                <ion-col width-20>
+                    <ion-label>
+                        1.700
+                    </ion-label>
+                </ion-col>
+
+                <ion-col width-20>
+                    <ion-label>
+                        <strong>Omschrijving</strong>
+                    </ion-label>
+                </ion-col>
+                <ion-col width-20>
+                    <ion-label>
+                        Hout
+                    </ion-label>
+                </ion-col>
+
+                <ion-col width-20></ion-col>
+            </ion-row>
+
+        </ion-list>
+    </ion-card>
+</ion-content>

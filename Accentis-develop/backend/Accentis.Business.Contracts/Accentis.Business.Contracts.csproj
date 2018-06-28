@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Accentis.Business\Accentis.Business.csproj" />
+    <ProjectReference Include="..\Accentis.Database.Domain\Accentis.Database.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

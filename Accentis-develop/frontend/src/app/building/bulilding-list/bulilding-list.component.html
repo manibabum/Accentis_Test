@@ -1,0 +1,51 @@
+<!-- Filter Datatable Options Starts -->
+<section id="filter" class="mb-3">
+  <div class="row">
+      <div class="col-12">
+            <p class="font-medium-3 text-muted text-bold-400">Gebouwen</p>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-12">
+           <!-- start kendo grid -->
+           <kendo-grid [data]="gridData" [pageSize]="state.take" [skip]="state.skip" [sort]="state.sort" [filter]="state.filter" [sortable]="true"
+           [pageable]="true" filterable="menu" (dataStateChange)="dataStateChange($event)">
+           <ng-template kendoGridToolbarTemplate>
+                   <!-- <button kendoGridPDFCommand><span class='k-icon k-i-file-pdf'></span>Export to PDF</button> -->
+                   <button type="button" kendoGridExcelCommand><span class="k-icon k-i-file-excel"></span>Export to Excel</button>
+               </ng-template>
+           <!-- <kendo-grid-column field="BuildingTypeID" title="ID" width="10" [filterable]="false"></kendo-grid-column> -->
+           <kendo-grid-column field="Gebouw" title="Gebouw" width="20" ></kendo-grid-column>
+           <kendo-grid-column field="Adres" title="Adres" width="15" ></kendo-grid-column>
+           <kendo-grid-column field="PC" title="PC" width="15"></kendo-grid-column>
+           <kendo-grid-column field="CTA" title="CTA" width="15"></kendo-grid-column>
+           <kendo-grid-column field="Contractnr" title="Contractnr" width="20" ></kendo-grid-column>
+           <kendo-grid-column field="Opedrachtgever" title="Opedrachtgever" width="20"></kendo-grid-column>
+          
+           <kendo-grid-column  width="10" title="Action" >
+               <ng-template kendoGridCellTemplate let-dataItem>
+                   <!-- <input type="checkbox" [checked]="dataItem.Discontinued" disabled/> -->
+                   <a href='building/detail'><i class='icon-arrow-right primary'></i></a>
+               </ng-template>
+           </kendo-grid-column>
+           <kendo-grid-excel fileName="BuildingList.xlsx"></kendo-grid-excel>
+           <!-- <kendo-grid-pdf fileName="buildinglist.pdf" [allPages]="true" paperSize="A4" [repeatHeaders]="true" [landscape]="true">
+                   <kendo-grid-pdf-margin top="2cm" left="1cm" right="1cm" bottom="2cm"></kendo-grid-pdf-margin>
+                   <ng-template kendoGridPDFTemplate let-pageNum="pageNum" let-totalPages="totalPages">
+                    <div class="page-template">
+                       <div class="header">
+                         <div style="float: right">Page {{ pageNum }} of {{ totalPages }}</div>
+                         Multi-page grid with automatic page breaking
+                       </div>
+                       <div class="footer">
+                         Page {{ pageNum }} of {{ totalPages }}
+                       </div>
+                     </div>
+                   </ng-template>
+               </kendo-grid-pdf> -->
+       </kendo-grid>
+       <!-- end kendo grid -->
+      </div>
+  </div>
+</section>
+<!-- Filter Datatable Options Ends -->

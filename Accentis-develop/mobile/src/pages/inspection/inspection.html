@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar class="left-padding-10">
+    <ion-title class="toolbar-background text-alignment">
+      OVERZICHT INSPECTIES
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-label class="lbl-background">Maak inspectie of selecteer ingeplande inspectie</ion-label>
+
+  <!-- <ion-row>
+    <ion-col width-25 class="theme-BG-color">
+      <ion-label>Test</ion-label>
+    </ion-col>
+    <ion-col width-25 style="background-color: rgb(10, 50, 57)">
+      <ion-label>Test123</ion-label>
+    </ion-col>
+    <ion-col width-25 style="background-color: rgb(180, 150, 157)">
+      <ion-label>Test123456</ion-label>
+    </ion-col>
+    <ion-col width-25 style="background-color: rgb(134, 87, 70)">
+      <ion-label>Test123456789</ion-label>
+    </ion-col>
+  </ion-row> -->
+
+  <!-- inspection address -->
+  <ion-row>
+    <ion-col width-75>
+      <ion-label class="left-padding-5">AD02-348</ion-label>
+    </ion-col>
+    <ion-col width-25>
+      <button ion-button clear (click)="addInspection()">
+        INSPECTIE
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-card (click)="inspectionDetail()">
+    <ion-list>
+      <ion-row>
+        <ion-col width-50>
+          <ion-label>
+            <strong>01 2015</strong>
+          </ion-label>
+        </ion-col>
+        <ion-col width-50>
+          <button ion-button color="primary">ingeplande</button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col width-50>
+          <ion-label>Inspecteur : person 1</ion-label>
+        </ion-col>
+        <ion-col width-50>
+          <ion-label>01-01-2015</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </ion-card>
+
+  <ion-card (click)="inspectionDetail()">
+    <ion-list>
+      <ion-row>
+        <ion-col width-50>
+          <ion-label>
+            <strong>01 2014</strong>
+          </ion-label>
+        </ion-col>
+        <ion-col width-50>
+          <button ion-button color="secondary">ingeplande</button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col width-50>
+          <ion-label>Inspecteur : person 2</ion-label>
+        </ion-col>
+        <ion-col width-50>
+          <ion-label>01-01-2014</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </ion-card>
+
+  <!-- <ion-list>
+      <ion-item detail-push>
+        <p>Terms Of Use</p>
+      </ion-item>
+  </ion-list> -->
+</ion-content>
