@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar class="left-padding-10">
+        <ion-title class="toolbar-background text-alignment">
+            Inspection Edit Photo
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-row>
+        <ion-col width-50>
+            <button ion-button clear (click)="save()">
+                Opslaan
+            </button>
+        </ion-col>
+        <ion-col width-50>
+            <button ion-button clear (click)="changePhoto()">
+                Foto Wijzigen
+            </button>
+            <button ion-button clear (click)="removePhoto()">
+                Verwijder foto
+            </button>
+        </ion-col>
+    </ion-row>
+
+    <ion-label class="left-padding-10">
+        <strong>Gebouw</strong>
+    </ion-label>
+    <ion-label class="left-padding-10">Hermanplatsoen 2-10 1344 AL Vlaardingen</ion-label>
+    <ion-label class="left-padding-10">Flatgebouw</ion-label>
+
+    <ion-label class="single-line"></ion-label>
+
+    <!-- <ion-slides class="image-slider" loop="true" slidesPerView="2">
+        <ion-slide *ngFor="let img of images">
+            <ion-label> {{img}} </ion-label>
+            <img src="assets/imgs/{{img}}" class="thumb-img" imageViewer/>
+        </ion-slide>
+    </ion-slides> -->
+
+    <img [src]="base64Image" class="customImageCenter" (click)="imageZoominNextView()">
+    <!-- <img src="assets/imgs/3.jpeg" class="customImageCenter" alt=""> -->
+
+</ion-content>

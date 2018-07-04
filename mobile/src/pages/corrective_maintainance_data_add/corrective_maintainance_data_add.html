@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-navbar class="left-padding-10">
+    <ion-title class="toolbar-background text-alignment">
+      Add Corrective Maintainance Data
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-label class="lbl-background">Address</ion-label>
+
+  <ion-row>
+    <ion-col width-50>
+      <ion-label class="left-padding-5">
+        <strong>Daknummer</strong>
+      </ion-label>
+    </ion-col>
+    <ion-col width-50>
+      <ion-label class="left-padding-5">
+        {{documentNumber}}
+      </ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col width-50>
+      <ion-label class="left-padding-5">
+        <strong>Omschrijving</strong>
+      </ion-label>
+    </ion-col>
+    <ion-col width-50>
+      <ion-label class="left-padding-5">
+        Dak boven woningen
+      </ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-label class="single-line"></ion-label>
+
+  <ion-label class="font-30 text-alignment">Voer gegevens in</ion-label>
+
+  <ion-row>
+    <ion-col width-50>
+      <ion-label class="left-padding-10">
+        Dakbouwdeel
+      </ion-label>
+    </ion-col>
+
+    <ion-col width-50>
+      <ion-label class="left-padding-10">
+        Dakbedekking
+      </ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-item>
+    <ion-label floating>
+      Maatregel
+    </ion-label>
+    <ion-input (click)="dropdownMeasure()" [(ngModel)]="selectedMeasure"> {{selectedMeasure}} </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>
+      Omvang
+    </ion-label>
+    <ion-input type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>
+      Periode
+    </ion-label>
+    <ion-input type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>
+      Toelichting
+    </ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <ion-row>
+    <ion-col width-50>
+      <button ion-button class="theme-BG-color" full (click)="add()">
+        Toevoegen
+      </button>
+    </ion-col>
+    <ion-col width-50>
+      <button ion-button class="theme-BG-color" full (click)="cancel()">
+        Sluiten
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
